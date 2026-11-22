@@ -1,0 +1,16 @@
+{
+  "name": "service-gateway",
+  "version": "1.0.0",
+  "description": "Pluggable gateway that mounts self-registering services under path prefixes; talks to local LLMs (Ollama).",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "dotenv": "^16.4.5"
+  }
+}
