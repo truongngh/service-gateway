@@ -38,14 +38,14 @@ npm test
 ## Container (Docker)
 ```bash
 docker build -t service-gateway .
-docker run --rm -p 8080:8080 service-gateway
+docker run --rm -p 8081:8081 service-gateway
 ```
 
 ## Verify
 ```bash
-curl -s localhost:8080/                                   # list services
-curl -s localhost:8080/services/health/health             # {"status":"ok"}
-curl -s -X POST localhost:8080/services/text/generate \
+curl -s localhost:8081/                                   # list services
+curl -s localhost:8081/services/health/health             # {"status":"ok"}
+curl -s -X POST localhost:8081/services/text/generate \
   -H 'content-type: application/json' \
   -d '{"model":"qwen3.8:27b","prompt":"say hi"}'
 ```
@@ -56,13 +56,13 @@ curl -s -X POST localhost:8080/services/text/generate \
 Pull and run:
 ```bash
 docker pull ghcr.io/truongngh/service-gateway:main
-docker run --rm -p 8080:8080 ghcr.io/truongngh/service-gateway:main
+docker run --rm -p 8081:8081 ghcr.io/truongngh/service-gateway:main
 ```
 
 ## Environment
 | Var | Default | Purpose |
 |---|---|---|
-| `PORT` | `8080` | listen port |
+| `PORT` | `8081` | listen port |
 | `OLLAMA_BASE_URL` | `http://host.docker.internal:11434` | local Ollama |
 | `DEFAULT_TEXT_MODEL` | `qwen3.8:27b` | default model |
 | `IMAGE_SERVICE_URL` | — | local image model (stub) |

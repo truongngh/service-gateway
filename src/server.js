@@ -26,5 +26,5 @@ app.use((req, res) => {
   res.status(404).json({ error: 'not found', path: req.path });
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 app.listen(port, () => console.log(`[gateway] listening on :${port}`));
