@@ -17,4 +17,5 @@ test('services auto-register and expose valid manifests', async () => {
   const names = services.map((s) => s.name);
   assert.ok(names.includes('health'), 'health service present');
   assert.ok(names.includes('text'), 'text service present');
+  assert.ok(names.includes('models'), 'models service present');
 });

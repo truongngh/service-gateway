@@ -24,6 +24,7 @@ The root route `GET /` lists every registered service.
 |---|---|---|
 | `health` | `/services/health/health` | liveness check |
 | `text` | `/services/text/generate` | chat/completion via local Ollama |
+| `models` | `/services/models` | list local models (proxies Ollama `/api/tags`) |
 | `image` | `/services/image` | extensible stub for a local image model |
 
 ## Local dev
